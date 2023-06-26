@@ -16,12 +16,12 @@
 
 .ModalOpen {
      animation: openModal 0.4 ease-out forwards;
-    visibility: visible;
+    /*visibility: visible;*/
 }
 
 .ModalClosed {
     animation: closeModal 0.4 ease-out forwards;
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 @keyframes  openModal {
