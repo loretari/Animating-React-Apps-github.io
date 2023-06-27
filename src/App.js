@@ -31,16 +31,26 @@ class App extends Component {
                     Toggle
                 </button>
                 <br/>
-                {this.state.showBlock ? (
-                    <div
-                        style ={{
-                            backgroundColor: 'red',
-                    width: 100,
-                    height: 100,
-                            margin: 'auto'
-                    }}
-                   />
-                   ) : null}
+                <Transition
+                    in={this.state.showBlock}
+                    timeout={1000}
+                mountOnEnter
+                unmountOnExit>
+                    {state => (
+                        <div
+                            style ={{
+                                backgroundColor: 'red',
+                                width: 100,
+                                height: 100,
+                                margin: 'auto',
+                                transition: 'opacity 1s ease-out',
+                                opacity: state === 'exiting' ? 0 : 1
+                            }}
+                        />
+                    )}
+
+
+                </Transition>
                 {this.state.modalIsOpen ? <Modal show = {this.state.modalIsOpen} closed = {this.closeModal} /> : null}
                 {this.state.modalIsOpen ? <Backdrop show = {this.state.modalIsOpen} /> : null}
                 <button className="Button" onClick={this.showModal}>Open Modal</button>
