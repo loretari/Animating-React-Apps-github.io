@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import './Modal.css';
-import CSSTransition from "react-transition-group/esm/CSSTransition";
+import CSSTransition from "react-transition-group/CSSTransition";
 
 const modal = (props) => {
 
